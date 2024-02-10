@@ -10,11 +10,11 @@ Class {
 
 { #category : #initialization }
 MatrixTrans >> convertCompactToSparse [
-
+"This function convert a compact matric to a sparse matrix"
       | tpCompactMatrix tpSparseMatrix rows columns sizeCompactMatrix |
       
       tpCompactMatrix:= compactMatrix.
-      "Determine the size of the sparse matrix"
+      "Assuming a sparse matrix of size 4x5"
       rows:= 4.
       columns:= 5.
       
@@ -65,7 +65,7 @@ MatrixTrans >> convertCompactToSparse [
 
 { #category : #initialization }
 MatrixTrans >> convertSparseToCompact [	
-			
+"This function convert a sparse matrix to a compact matrix"	
 	| tpSparse tpCompact rows columns size k |
 	 
 	tpSparse:= sparseMatrix.
