@@ -27,9 +27,6 @@ PharoDocs >> generateDocumentationForPackage: packageName [
 		          Transcript show: 'Method: ', method;cr.
 		          senders:= SystemNavigation default allCallsOn: method.
 		          Transcript show: 'Senders: ', (senders collect:[ :sender | sender name ]) asString;cr.
-		    "      senders do:[ :sender | 
-			         		Transcript show: 'Senders: ', sender name;cr.
-			       ]."
 		 ].
 	 ]
 ]
