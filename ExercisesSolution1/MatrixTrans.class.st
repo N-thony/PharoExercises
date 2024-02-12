@@ -116,9 +116,29 @@ MatrixTrans >> convertSparseToCompact [
    
 ]
 
+{ #category : #'as yet unclassified' }
+MatrixTrans >> getCompactMatrix [ 
+^compactMatrix
+]
+
+{ #category : #initialization }
+MatrixTrans >> getSparseMatrix [
+^sparseMatrix
+]
+
 { #category : #initialization }
 MatrixTrans >> initialize [
      super initialize.
      sparseMatrix:= #( #(0 0 3 0 4) #(0 0 5 7 0) #(0 0 0 0 0) #(0 2 6 0 0) ).
      compactMatrix:= #( #(0 0 1 1 3 3) #(2 4 2 3 1 2) #(3 4 5 7 2 6) )
+]
+
+{ #category : #initialization }
+MatrixTrans >> setCompatMatrix: newCompactMatrix [
+   compactMatrix:= newCompactMatrix
+]
+
+{ #category : #initialization }
+MatrixTrans >> setSparseMatrix: newSpareMatrix [
+     sparseMatrix:= newSpareMatrix
 ]
