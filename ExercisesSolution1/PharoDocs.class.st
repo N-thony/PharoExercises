@@ -1,6 +1,9 @@
 Class {
 	#name : #PharoDocs,
 	#superclass : #Object,
+	#instVars : [
+		'packageName'
+	],
 	#category : #ExercisesSolution1
 }
 
@@ -26,4 +29,10 @@ PharoDocs >> generateDocumentationForPackage: packageName [
 		          
 		 ].
 	 ].
+]
+
+{ #category : #initialization }
+PharoDocs >> initialize [ 
+   super initialize.
+   packageName:= 'ExercisesSolution1'
 ]
