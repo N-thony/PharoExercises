@@ -37,7 +37,7 @@ SetTestCase >> testGenerateDocumentationForPackage [
      self assert: (Transcript contents includesSubstring: 'Documentation for package:', tpPackageName).
      self assert: (Transcript contents includesSubstring: 'Class: ', 'SetTestCase').
      self assert: (Transcript contents includesSubstring: 'Superclass: ', 'TestCase').
-     "We can add more assertions as needed based on the expected output of the method"  
+     "Add more assertions as needed based on the expected output of the method"  
 ]
 
 { #category : #tests }

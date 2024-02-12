@@ -16,17 +16,14 @@ PharoDocs >> generateDocumentationForPackage: packageName [
 	        Transcript show: 'Class: ', class name ; cr.
 	        Transcript show: 'Superclass: ', class superclass name;cr.
 	        Transcript show: 'Subclasses: ', (class subclasses collect:[ :subclass | subclass name ]) asString;cr.
-	        class instVarNames do:[ :instVar | 
-		           Transcript show: '++++++++++++++++++++++++++++++++';cr.
-		           Transcript show: 'Instance variable: ', instVar;cr.
-		     "Transcript show: 'Method reference: ', (instVar methodReference name);cr. "   
-		     ].
-	       class methodDictionary keys do: [ :method |
-		          | senders |
+	        Transcript show: 'Instance variable: ', (class instVarNames collect:[ :instVar | instVar name ]) asString;cr.
+	        class methodDictionary keys do: [ :method |
 		          Transcript show: '*********************************';cr.
-		          Transcript show: 'Method: ', method;cr.
-		          senders:= SystemNavigation default allCallsOn: method.
-		          Transcript show: 'Senders: ', (senders collect:[ :sender | sender name ]) asString;cr.
+		          Transcript show: 'Method: ', method selector;cr.
+		          Transcript show: 'okkk';cr.
+		          Transcript show: 'Senders: ', (method senders collect: [ :sender | sender methodClass name, '>>', sender selector ]);cr.
+		          Transcript show: 'Instances Variables methodes reference: ', (method literals select: [ :literal | (literal isVariableBinding and: [ class instVarNames includes: literal key ]) ]) keys asString;cr.
+		          
 		 ].
-	 ]
+	 ].
 ]
