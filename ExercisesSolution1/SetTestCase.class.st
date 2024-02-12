@@ -23,6 +23,23 @@ SetTestCase >> testCompactToSparseMatrix [
 ]
 
 { #category : #tests }
+SetTestCase >> testGenerateDocumentationForPackage [
+
+     | tpPackageName pharoDoc result |
+     
+     pharoDoc:= PharoDoc new.
+     "Replace Exercice with your desired package name"
+     tpPackageName:= 'ExercisesSolution1'.
+   
+     "Result from the method to generateDocumentationForPackage"
+     result:= pharoDoc generateDocumentationForPackage: tpPackageName.
+
+    "Add assertions to verify the expected behavior"
+     self assert: (result includesSubstring: 'Documentation for package: ', tpPackageName).
+     "Add more assertions as needed based on the expected output of the method"  
+]
+
+{ #category : #tests }
 SetTestCase >> testSparseToCompactMatrix [
 
    | tpSparseMatrix tpCompactMatrix tpExpectedCompactMatrix tpMatrixTrans |
