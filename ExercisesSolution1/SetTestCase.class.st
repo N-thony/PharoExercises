@@ -25,17 +25,18 @@ SetTestCase >> testCompactToSparseMatrix [
 { #category : #tests }
 SetTestCase >> testGenerateDocumentationForPackage [
 
-     | tpPackageName pharoDoc result |
+     | tpPackageName pharoDoc |
      
      pharoDoc:= PharoDoc new.
      "Replace Exercice with your desired package name"
      tpPackageName:= 'ExercisesSolution1'.
-   
-     "Result from the method to generateDocumentationForPackage"
-     result:= pharoDoc generateDocumentationForPackage: tpPackageName.
+     
+     pharoDoc generateDocumentationForPackage: tpPackageName.
 
     "Add assertions to verify the expected behavior"
-     self assert: (result includesSubstring: 'Documentation for package: ', tpPackageName).
+     self assert: (Transcript contents includesSubstring: 'Documentation for package:', tpPackageName).
+     self assert: (Transcript contents includesSubstring: 'Class: ', 'SetTestCase').
+     self assert: (Transcript contents includesSubstring: 'Superclass: ', 'TestCase').
      "Add more assertions as needed based on the expected output of the method"  
 ]
 
